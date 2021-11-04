@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import {Layout} from 'antd';
+import HeaderApp from "./components/HeaderApp";
+import {useDispatch, useSelector} from 'react-redux';
+import {GET_FILMS} from "./reducers/actions"
+import Sidebar from "./components/Sidebar";
+import PaginationApp from "./components/PaginationApp";
+import ContentApp from "./components/ContentApp";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const { Footer} = Layout;
+
+const App = () => {
+    const {getFilms:{films}} = useSelector((state) => ({...state}))
+    const dispatch = useDispatch();
+    const [collapsed, setCollapsed] = useState(false)
+
+    useEffect(() => {
+        dispatch({type: GET_FILMS})
+    }, [dispatch])
+
+    return (
+        <Layout>
+            <Sidebar dataToFilter={films}/>
+            <Layout className="site-layout" style={{marginBottom: 60}}>
+                <HeaderApp {...{collapsed, setCollapsed}} />
+                <ContentApp/>
+            </Layout>
+            <Footer style={{ textAlign: 'center', position: "fixed", bottom: 0, width: "100%" }}>
+                <PaginationApp />
+            </Footer>
+        </Layout>
+    );
 }
-
 export default App;

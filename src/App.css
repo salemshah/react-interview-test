@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+.trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.trigger:hover {
+    color: #1890ff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(138, 30, 255, 0.3);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.site-layout .site-layout-background {
+    background: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+    margin: 24px 16px;
+    padding: 24px;
+    min-height: calc(100vh - 115px)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.box {
+    padding: 10px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px;
+}
+.search-box{
+    max-width: 600px;
+}
+
+.filter {
+    font-size: 20px;
+    position: fixed;
+    max-width: 195px;
+    padding: 10px;
+}
+
+.category {
+    padding: 0 20px
+}
+
+.custom-divider {
+    margin: 0
+}
+
+.icon-style {
+    padding-right: 10px;
+    font-size: 25px
+}
+
+.card-app:hover {
+    transition: all 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
