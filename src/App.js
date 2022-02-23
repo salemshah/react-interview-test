@@ -26,7 +26,12 @@ const App = () => {
                 <ContentApp/>
             </Layout>
             <Footer style={{ textAlign: 'center', position: "fixed", bottom: 0, width: "100%" }}>
-                <PaginationApp />
+                <>
+                    <PaginationApp />
+                    <h6>
+                        Developed by Salem shah
+                    </h6>
+                </>
             </Footer>
         </Layout>
     );
